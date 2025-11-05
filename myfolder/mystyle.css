@@ -862,3 +862,27 @@ content_list
 .tab-slides .ec-base-product .prdList.swiper-wrapper{
   flex-wrap: nowrap;
 } 
+
+/* 버튼 색상변경 */
+[class^='btnSubmit'], a[class^='btnSubmit'] {
+    background: #f00;
+    color: #fff;
+}
+
+/* 옵션칼라칩 */
+@media (min-width:1024.002px){
+  .xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li {
+    border-radius: 0%;
+    margin-right: 8px;
+    padding: 4px;
+    border: 1px solid #efefef;
+    background-color: #fff;
+}
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li.ec-product-selected{
+    border: 1px solid #000;
+}
+  .xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a {
+      width: 30px;
+      height: 30px;
+  }
+}
