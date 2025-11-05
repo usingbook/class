@@ -572,14 +572,14 @@
             <div module="product_action" id="{$fixed_action_button}" class="productAction">
 				<div id="ec-product-price-info" class="displaynone" ec-data-custom="{$disp_product_custom}" ec-data-price="{$product_price}"></div>
                 <div class="{$action_display|display} action_button">
-					<span class="sub_sold {$soldout_display|display}">SOLD OUT</span>
-                    <a href="#none" class="btnSubmit sizeL {$buy_display|display}" onclick="{$action_buy}"><span id="{$btn_buy_mobile_id}">BUY IT NOW</span><span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span><span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">REGULAR DELIVERY</span></a>
-					<button type="button" class="btnNormal sizeL actionCart {$basket_display|display}" onclick="{$action_basket}" id="actionCart">CART</button>
-					<button type="button" class="btnNormal sizeL actionWish {$wishlist_display|display}" onclick="{$action_wishlist}" id="actionWish">WISH LIST</button>
+					<span class="sub_sold {$soldout_display|display}">품절</span>
+                    <a href="#none" class="btnSubmit sizeL {$buy_display|display}" onclick="{$action_buy}"><span id="{$btn_buy_mobile_id}">구매하기</span><span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span><span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">REGULAR DELIVERY</span></a>
+					<button type="button" class="btnNormal sizeL actionCart {$basket_display|display}" onclick="{$action_basket}" id="actionCart">장바구니</button>
+					<button type="button" class="btnNormal sizeL actionWish {$wishlist_display|display}" onclick="{$action_wishlist}" id="actionWish">위시리스트</button>
                 </div>
                 <div class="ec-base-button soldout {$action_soldout_display|display}">
-                    <button type="button" class="btnSubmit gFull sizeL {$soldout_display|display}">SOLD OUT</button>
-                    <button type="button" class="btnNormal gFull sizeL {$wishlist_display|display}" onclick="{$action_wishlist}" id="actionWishSoldout">WISH LIST</button>
+                    <button type="button" class="btnSubmit gFull sizeL {$soldout_display|display}">품절</button>
+                    <button type="button" class="btnNormal gFull sizeL {$wishlist_display|display}" onclick="{$action_wishlist}" id="actionWishSoldout">위시리스트</button>
                 </div>
 				<a href="/board/inquiry/write.html{$inquiry_param}" class="btnNormal gFull sizeL mrt10 {$inquiry_display|display}">대량구매문의</a>
                 <!-- 네이버 체크아웃 구매 버튼  -->

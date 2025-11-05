@@ -862,3 +862,9 @@ content_list
 .tab-slides .ec-base-product .prdList.swiper-wrapper{
   flex-wrap: nowrap;
 } 
+
+/* 버튼 색상변경 */
+[class^='btnSubmit'], a[class^='btnSubmit'] {
+    background: #f00;
+    color: #fff;
+}
