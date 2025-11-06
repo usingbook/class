@@ -1122,3 +1122,12 @@ body.allmenu-mega #header .inner .top_nav_box .top_mypage{
 }
 
 
+/***********
+메인화면과 다른서브페이지의 공통영역(헤더, 푸터)가 다를 경우
+*/
+
+@media (min-width:1024.002px){
+.main #header{
+   background-color: #f00;
+ }
+}
