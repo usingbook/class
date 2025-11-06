@@ -1,0 +1,231 @@
+.allmenu-mega{
+  --ub-header-max-width:1760px;
+  --ub-header-width:92%;
+  --allmenu-inner-padding:24px;
+  --ub-border-color:#eee;
+}
+
+
+/*********
+ 햄버거 버튼 래퍼
+ allmenu 액션버튼
+ **************/
+.hamburger_button {
+  position: absolute;
+  left:0; bottom:0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+#header.fixed .hamburger_button{
+  height: 50px;
+}
+
+/* 버튼 */
+.btn-hamburger {
+  position: relative;
+  width: 26px;
+  height: 18px;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-hamburger .hamburger_line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #1a1a1a;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.btn-hamburger .hamburger_line:nth-of-type(1) {
+  top: 0;
+}
+.btn-hamburger .hamburger_line:nth-of-type(2) {
+  top: calc(50% - 1px);
+}
+.btn-hamburger .hamburger_line:nth-of-type(3) {
+  bottom: 0;
+}
+
+.btn-hamburger.is-active .hamburger_line:nth-of-type(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.btn-hamburger.is-active .hamburger_line:nth-of-type(2) {
+  opacity: 0;
+}
+.btn-hamburger.is-active .hamburger_line:nth-of-type(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+
+/**************
+allmenu 메가메뉴 커스텀 스타일
+****************/
+body.allmenu-mega #header{position: relative;}  
+
+body.allmenu-mega #header.fixed {
+  position: fixed !important;
+}
+
+#header.fixed .inner .top_nav_box .top_logo{
+  display: none;
+}
+body.allmenu-mega #header .inner .top_nav_box .top_mypage{
+  bottom:0;
+  top:auto;
+}
+
+
+#allmenu {
+  position:absolute;
+  left:0; bottom:0;
+  width:100%;
+  opacity: 0;
+  z-index: 500;
+   transform: translateY(100%);
+  display: none;
+}
+@media (max-width:1024px) {
+  
+}
+
+#allmenu.is-active {
+ 
+  opacity: 1;
+  display: block;
+}
+
+#allmenu .allmenu__list{
+  position: relative;
+  background-color: #fff;
+  z-index: 10;
+  overflow-y: auto;
+
+}
+
+#allmenu .allmenu__inner {
+  position: relative;
+  background: #fff;
+  width: var(--ub-header-width, 92%);
+  max-width: var(--ub-header-max-width, 1760px);
+  margin: 0 auto;
+  padding:var(--allmenu-inner-padding,  24px) 0;
+  pointer-events: auto;
+
+}
+.allmenu__item{
+  position: relative;
+  padding-left:var(--space-lg);
+}
+.allmenu__item::after{
+  content:"";
+  position: absolute;
+  left:0; top:50px;
+  width: 2px;
+  height: 85%;
+  background-color: var(--ub-border-color, #eee);
+}
+.allmenu__item:first-child:after{
+  content: none;
+}
+
+
+.allmenu__item:first-child{
+  border-left: none;
+  padding-left: 0;
+}
+
+
+.allmenu__item--title {
+  position: relative;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 10px 0;
+  margin-bottom: var(--space-md ,16px);
+} 
+.allmenu__item--title::after{
+  content:"";
+  position: absolute;
+  left:0; bottom:0;
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.allmenu__content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: var(--space-lg);
+  box-sizing: border-box;
+  height: clamp(350px, 50vh, calc(50vh - 80px));
+
+}
+
+
+.allmenu__nav .mega__list--d1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-lg) 0; 
+    height: clamp(350px, 50vh, calc(50vh - 80px));
+}
+.allmenu__nav .mega__item--d1 {
+  width: 50%;
+}
+.allmenu__nav .mega__list--d2 {
+  display: flex;
+  gap: 8px clamp(8px, 1vw, 24px);
+}
+.allmenu__nav .mega__list--d3 {
+  display: grid;
+  gap: 4px 0;
+  margin-top: 6px;
+}
+.allmenu__nav .mega__link {
+  display: inline-block;
+  line-height: 1.4;
+  text-decoration: none;
+  color: currentColor;
+}
+.allmenu__nav .mega__link:hover {
+  text-decoration: underline;
+}
+.allmenu__nav .mega__link--d1 {
+ font-size: 1rem;
+ font-weight: 500;
+}
+.allmenu__nav .mega__link--d2 {
+ padding-top:var(--space-sm, 8px);
+}
+.allmenu__nav .mega__item.is-current > .mega__link,
+.allmenu__nav .mega__link.is-current {
+  font-weight: 700;
+  text-underline-offset: 2px;
+}
+.allmenu__content--boardinfo {
+  font-size: 1rem;
+}
+
+
+/* 반투명 배경 (아래 레이어) */
+#allmenu.is-active .allmenu__backdrop {
+  position: fixed;
+  /* display: none; */
+  left:0; top:0;width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  pointer-events: auto; /* 클릭 닫기 동작 */
+}
+
+

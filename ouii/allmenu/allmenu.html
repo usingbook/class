@@ -1,0 +1,28 @@
+<!-- 오버레이 전체메뉴 (안전 훅) -->
+<aside id="allmenu" class="allmenu show-pc" aria-hidden="true" data-role="allmenu">
+  <div class="allmenu__list">
+    <div class="allmenu__inner row">
+      <nav class="allmenu__nav allmenu__item col-5" aria-label="전체 카테고리">
+        <div class="allmenu__item--title">Category</div>
+        <div class="mega-mount allmenu__content" data-role="mega-mount"></div>
+      </nav>
+      <div class="allmenu__item col-4">
+         <div class="allmenu__item--title">Community</div>
+        <ul module="Layout_BoardInfo" class="allmenu__content allmenu__content--boardinfo">
+                <li><a href="{$link_board_list}">{$board_name}</a></li>
+                <li><a href="{$link_board_list}">{$board_name}</a></li>
+              </ul>
+      </div>
+    <div class="allmenu__item col-3">
+      <div class="allmenu__item--title">Event</div>
+      <div class="allmenu__content allmenu__content--smartbanner">
+        <!--여디 스마트배너 넣으세요-->
+      </div>
+    </div>
+     </div>
+  </div>
+  <div class="allmenu__backdrop" data-close></div>
+</aside>
+
+
+ <!--@js(/myfolder/js/allmenu.js)-->
